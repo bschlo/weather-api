@@ -1,11 +1,14 @@
-.weather-card {
+.weathercard {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 700px;
+    justify-content: center;
+    align-items: left;
 }
 
 .day-container {
     display: flex;
     flex-direction: row;
-    width: 700px;
+    width: 100%;
+    justify-content: space-evenly;
 }

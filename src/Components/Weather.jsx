@@ -47,6 +47,18 @@ const Weather = () => {
     }
   };
 
+  const getWeatherImage = (description) => {
+    if (description.includes("clear")) {
+      return "day.svg"; // Replace with your image URL
+    } else if (description.includes("cloud")) {
+      return "cloudy-day-1.svg"; // Replace with your image URL
+    } else if (description.includes("rain")) {
+      return "rainy-4.svg"; // Replace with your image URL
+    } else {
+      return "day.svg"; // Default image
+    }
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -67,11 +79,18 @@ const Weather = () => {
       <div className="day-container">
         {weatherData && weatherData.slice(0, 5).map((day, index) => (
           <div key={index} className="weathercard">
+            <img 
+              src={`../../img/${getWeatherImage(day.weather[0].description)}`} 
+              alt="weather" 
+              className="weather-image"
+            />
             <h3>{new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' })}</h3>
+            <h4>{new Date(day.dt * 1000).toLocaleDateString()}</h4>
             <p>Temperature: {day.main.temp}°C</p>
             <p>Weather: {day.weather[0].description}</p>
             <p>Humidity: {day.main.humidity}%</p>
             <p>Wind Speed: {day.wind.speed} m/s</p>
+            
           </div>
         ))}
       </div>
