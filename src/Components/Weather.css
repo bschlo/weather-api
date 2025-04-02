@@ -1,0 +1,11 @@
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.day-container {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+}
