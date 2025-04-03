@@ -1,7 +1,7 @@
 .weathercard {
     display: flex;
     flex-direction: column;
-    width: 230px;
+    width: 175px;
     justify-content: center;
     align-items: center;
     border: 3px solid rgb(16, 223, 223);
@@ -52,6 +52,7 @@
     width: 50%;
     text-align: left;
     font-weight: bold;
+    font-size: 10px;
 }
 
 .date {
@@ -72,12 +73,12 @@
 }
 
 .welcome-message {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .weather-in {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .top-half {
@@ -99,7 +100,7 @@ label {
 }
 
 input {
-    font-size: 16px;
+    font-size: 8px;
     height: 26px;
     background-color: rgb(16, 15, 15);
     color: white;
@@ -159,7 +160,7 @@ button {
     background-color: cyan;
     height: 20px;
     width: 120px;
-    font-size: 14px;
+    font-size: 6px;
 }
 
 button:hover {
