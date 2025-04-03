@@ -110,6 +110,7 @@ input {
     border-bottom: 1px solid white;
     outline: none;
     width: 160px;
+    font-family: "STIX Two Text", serif;
 }
 
 input:focus {
