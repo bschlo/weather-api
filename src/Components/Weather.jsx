@@ -123,7 +123,7 @@ const Weather = () => {
                 </div>
                 <div className="items">
                   <div className="title">Weather:</div>
-                  <div className="value">{day.weather[0].description}</div>
+                  <div className="value">{capitilizeWords(day.weather[0].description)}</div>
                 </div>
                 <div className="items">
                   <div className="title">Humidity:</div>
