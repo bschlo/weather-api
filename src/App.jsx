@@ -5,7 +5,6 @@ import Weather from './Components/Weather'
 const App = () => {
   return (
     <>
-    <div>Welcome To The Weather API</div>
     <Weather/>
     </>
   )

@@ -3,7 +3,7 @@ import "./Weather.css";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState("Los Angeles");
+  const [city, setCity] = useState("New York");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -12,7 +12,7 @@ const Weather = () => {
       setLoading(true);
       setError("");
       const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
-      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
 
       try {
         const response = await fetch(url);
@@ -62,8 +62,11 @@ const Weather = () => {
   };
 
   return (
-    <div>
+    <div className="main-container">
+      <div className="top-half">
+      <div className="welcome-message">Welcome to The Weather API</div>
       <form onSubmit={handleSubmit}>
+        <label>Type in your current city:</label>
         <input
           type="text"
           value={city}
@@ -73,10 +76,11 @@ const Weather = () => {
         <button type="submit">Get Weather</button>
       </form>
 
-      <h2>Weather in {city}</h2>
+      <div className="weather-in">Weather in {city}</div>
 
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
 
       <div className="day-container">
         {weatherData &&
@@ -102,7 +106,7 @@ const Weather = () => {
               <div className="description-container">
                 <div className="items">
                   <div className="title">Temperature:</div>
-                  <div className="value">{day.main.temp}°C</div>
+                  <div className="value">{day.main.temp}°F</div>
                 </div>
                 <div className="items">
                   <div className="title">Weather:</div>
@@ -114,7 +118,7 @@ const Weather = () => {
                 </div>
                 <div className="items">
                   <div className="title">Wind:</div>
-                  <div className="value">{day.wind.speed} m/s</div>
+                  <div className="value">{day.wind.speed} mph</div>
                 </div>
               </div>
             </div>
