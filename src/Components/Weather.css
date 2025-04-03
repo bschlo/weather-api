@@ -142,6 +142,8 @@ form {
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    width: 100%;
+    justify-content: center;
 }
 
 .overline {
@@ -152,4 +154,24 @@ form {
     width: 100%;
     padding-bottom: 21px;
     align-items: center;
+}
+
+.input-button {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-end
+}
+
+button {
+    border-radius: 10px;
+    background-color: cyan;
+    height: 25px;
+    width: 150px;
+    font-size: 17px;
+}
+
+button:hover {
+    background-color: rgb(109, 179, 179);
+    cursor: pointer;
 }
