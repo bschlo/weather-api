@@ -1,14 +1,70 @@
 .weathercard {
     display: flex;
     flex-direction: column;
-    width: 700px;
+    width: 200px;
     justify-content: center;
-    align-items: left;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .day-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
     width: 100%;
-    justify-content: space-evenly;
+    flex-direction: row;
+    
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.weather-image {
+    width: 150px;
+    height: 150px;
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 0;
+    gap: 10px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.title {
+    width: 50%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.value {
+    width: 50%;
+    text-align: left;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
 }

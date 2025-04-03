@@ -20,8 +20,10 @@ const Weather = () => {
           throw new Error("City not found");
         }
         const data = await response.json();
-        
-        const dailyForecast = data.list.filter((entry, index) => index % 8 === 0);
+
+        const dailyForecast = data.list.filter(
+          (entry, index) => index % 8 === 0
+        );
 
         setWeatherData(dailyForecast);
       } catch (error) {
@@ -49,13 +51,13 @@ const Weather = () => {
 
   const getWeatherImage = (description) => {
     if (description.includes("clear")) {
-      return "day.svg"; // Replace with your image URL
+      return "day.svg";
     } else if (description.includes("cloud")) {
-      return "cloudy-day-1.svg"; // Replace with your image URL
+      return "cloudy-day-1.svg";
     } else if (description.includes("rain")) {
-      return "rainy-4.svg"; // Replace with your image URL
+      return "rainy-4.svg";
     } else {
-      return "day.svg"; // Default image
+      return "day.svg";
     }
   };
 
@@ -77,22 +79,46 @@ const Weather = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <div className="day-container">
-        {weatherData && weatherData.slice(0, 5).map((day, index) => (
-          <div key={index} className="weathercard">
-            <img 
-              src={`../../img/${getWeatherImage(day.weather[0].description)}`} 
-              alt="weather" 
-              className="weather-image"
-            />
-            <h3>{new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' })}</h3>
-            <h4>{new Date(day.dt * 1000).toLocaleDateString()}</h4>
-            <p>Temperature: {day.main.temp}°C</p>
-            <p>Weather: {day.weather[0].description}</p>
-            <p>Humidity: {day.main.humidity}%</p>
-            <p>Wind Speed: {day.wind.speed} m/s</p>
-            
-          </div>
-        ))}
+        {weatherData &&
+          weatherData.slice(0, 5).map((day, index) => (
+            <div key={index} className="weathercard">
+              <div className="header">
+                <img
+                  src={`../../img/${getWeatherImage(
+                    day.weather[0].description
+                  )}`}
+                  alt="weather"
+                  className="weather-image"
+                />
+                <div className="date">
+                  <h3>
+                    {new Date(day.dt * 1000).toLocaleDateString("en-US", {
+                      weekday: "long",
+                    })}
+                  </h3>
+                  <h4>{new Date(day.dt * 1000).toLocaleDateString()}</h4>
+                </div>
+              </div>
+              <div className="description-container">
+                <div className="items">
+                  <div className="title">Temperature:</div>
+                  <div className="value">{day.main.temp}°C</div>
+                </div>
+                <div className="items">
+                  <div className="title">Weather:</div>
+                  <div className="value">{day.weather[0].description}</div>
+                </div>
+                <div className="items">
+                  <div className="title">Humidity:</div>
+                  <div className="value">{day.main.humidity}%</div>
+                </div>
+                <div className="items">
+                  <div className="title">Wind:</div>
+                  <div className="value">{day.wind.speed} m/s</div>
+                </div>
+              </div>
+            </div>
+          ))}
       </div>
     </div>
   );
