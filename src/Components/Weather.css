@@ -59,6 +59,7 @@
 .value {
     width: 50%;
     text-align: left;
+    font-weight: bold;
 }
 
 .date {
@@ -80,6 +81,7 @@
 
 .welcome-message {
     font-size: 40px;
+    font-weight: bold;
 }
 
 .weather-in {
@@ -92,22 +94,62 @@
     gap: 30px;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 label {
-    font-size: 20px;
+    font-size: 30px;
 }
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+
 input {
     font-size: 20px;
     height: 30px;
-    background-color: black;
+    background-color: rgb(16, 15, 15);
     color: white;
     border: none;
     border-bottom: 1px solid white;
+    outline: none;
+    width: 200px;
+}
+
+
+input:focus {
+    border-bottom: 2px solid cyan;
+}
+
+/* Glowing underline */
+.input-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: cyan;
+    transition: width 0.4s ease-in-out;
+}
+
+
+input:focus + .input-container::after {
+    width: 100%;
 }
 form {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: center;
+}
+
+.overline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-bottom: 1px solid white;
+    width: 100%;
+    padding-bottom: 21px;
     align-items: center;
 }

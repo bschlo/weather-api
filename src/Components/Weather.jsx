@@ -6,6 +6,7 @@ const Weather = () => {
   const [city, setCity] = useState("New York");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [inputCity, setInputCity] = useState("")
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -39,13 +40,13 @@ const Weather = () => {
   }, [city]);
 
   const handleCityChange = (event) => {
-    setCity(event.target.value);
+    setInputCity(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (city.trim()) {
-      setCity(city);
+    if (inputCity.trim()) {
+      setCity(inputCity);
     }
   };
 
@@ -61,25 +62,33 @@ const Weather = () => {
     }
   };
 
+  const capitilizeWords = (str) => {
+    return str.toLowerCase().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
+  }
+
   return (
     <div className="main-container">
       <div className="top-half">
-      <div className="welcome-message">Welcome to The Weather API</div>
-      <form onSubmit={handleSubmit}>
-        <label>Type in your current city:</label>
-        <input
-          type="text"
-          value={city}
-          onChange={handleCityChange}
-          placeholder="Enter city"
-        />
-        <button type="submit">Get Weather</button>
-      </form>
+        <div className="overline">
+          <div className="welcome-message">Welcome to The Weather API</div>
+          <form onSubmit={handleSubmit}>
+            <label>Type in your current city:</label>
+            <div className="input-container">
+              <input
+                type="text"
+                value={inputCity}
+                onChange={handleCityChange}
+                placeholder="Enter city"
+              />
+            </div>
+            <button type="submit">Get Weather</button>
+          </form>
+        </div>
 
-      <div className="weather-in">Weather in {city}</div>
+        <div className="weather-in">Weather in {capitilizeWords(city)}</div>
 
-      {loading && <p>Loading...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {loading && <p>Loading...</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
 
       <div className="day-container">
