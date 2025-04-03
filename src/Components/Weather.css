@@ -1,66 +1,58 @@
-
 .weathercard {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 160px;
     justify-content: center;
     align-items: center;
     border: 3px solid rgb(16, 223, 223);
-    box-shadow: 0 0 8px rgb(8, 230, 230), 0 0 15px #0ff, 0 0 20px #0ff, 0 0 30px #0ff; /* Smaller shadow */
-    padding: 15px; 
-    border-radius: 8px;
+    box-shadow: 0 0 6px rgb(8, 230, 230), 0 0 12px #0ff, 0 0 18px #0ff, 0 0 24px #0ff;
+    padding: 12px;
+    border-radius: 6px;
 }
-
 
 .day-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; 
+    gap: 15px;
     width: 100%;
     flex-direction: row;
 }
-
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px; 
+    gap: 3px;
 }
-
 
 .weather-image {
-    width: 120px; 
-    height: 120px; 
+    width: 100px;
+    height: 100px;
 }
-
 
 .description-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 8px 0; 
-    gap: 8px; 
+    padding: 6px 0;
+    gap: 6px;
 }
-
 
 .items {
     display: flex;
     flex-direction: row;
-    gap: 15px; 
+    gap: 12px;
     width: 100%;
     justify-content: space-between;
 }
-
 
 .title, .value {
     width: 50%;
     text-align: left;
     font-weight: bold;
 }
-
 
 .date {
     display: flex;
@@ -71,64 +63,55 @@
     text-transform: uppercase;
 }
 
-
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; 
+    gap: 30px;
     color: white;
 }
 
-
 .welcome-message {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
 }
 
-
 .weather-in {
-    font-size: 32px;
+    font-size: 28px;
 }
-
 
 .top-half {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 15px;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
-
 label {
-    font-size: 24px; 
+    font-size: 20px;
 }
-
 
 .input-container {
     position: relative;
     display: inline-block;
 }
 
-
 input {
-    font-size: 18px; 
-    height: 28px; 
+    font-size: 16px;
+    height: 26px;
     background-color: rgb(16, 15, 15);
     color: white;
     border: none;
     border-bottom: 1px solid white;
     outline: none;
-    width: 180px; 
+    width: 160px;
 }
-
 
 input:focus {
     border-bottom: 2px solid cyan;
 }
-
 
 .input-container::after {
     content: "";
@@ -145,82 +128,77 @@ input:focus + .input-container::after {
     width: 100%;
 }
 
-
 form {
     display: flex;
     flex-direction: row;
-    gap: 8px; 
+    gap: 6px;
     align-items: center;
     width: 100%;
     justify-content: center;
 }
 
-
 .overline {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 15px;
     border-bottom: 1px solid white;
     width: 100%;
-    padding-bottom: 18px;
+    padding-bottom: 15px;
     align-items: center;
 }
-
 
 .input-button {
     display: flex;
     flex-direction: row;
-    gap: 25px; 
+    gap: 20px;
     align-items: flex-end;
 }
 
-
 button {
-    border-radius: 8px; 
+    border-radius: 6px;
     background-color: cyan;
-    height: 22px; 
-    width: 130px; 
-    font-size: 15px;
+    height: 20px;
+    width: 120px;
+    font-size: 14px;
 }
-
 
 button:hover {
     background-color: rgb(109, 179, 179);
     cursor: pointer;
 }
 
-
 @media (max-width: 768px) {
     .weathercard {
-        width: 180px; 
+        width: 140px;
     }
 
     .weather-image {
-        width: 100px; 
-        height: 100px; 
+        width: 80px;
+        height: 80px;
     }
 
     .main-container {
-        gap: 30px; 
+        gap: 25px;
     }
 
     .top-half {
-        gap: 15px; 
+        gap: 12px;
     }
 
     .welcome-message, .weather-in {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .input-container {
-        width: 100%; 
+        width: 100%;
     }
 
     input {
-        width: 150px; 
+        width: 140px;
     }
 
     button {
-        width: 120px; 
+        width: 100px;
     }
 }
+
