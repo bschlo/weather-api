@@ -103,9 +103,7 @@ const Weather = () => {
             <div key={index} className="weathercard">
               <div className="header">
                 <img
-                  src={`../../img/${getWeatherImage(
-                    day.weather[0].description
-                  )}`}
+                  src={`/IMG/${getWeatherImage(day.weather[0].description)}`}
                   alt="weather"
                   className="weather-image"
                 />
