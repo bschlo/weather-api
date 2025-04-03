@@ -100,7 +100,7 @@ label {
 }
 
 input {
-    font-size: 8px;
+    font-size: 20px;
     height: 26px;
     background-color: rgb(16, 15, 15);
     color: white;
@@ -160,7 +160,7 @@ button {
     background-color: cyan;
     height: 20px;
     width: 120px;
-    font-size: 6px;
+    font-size: 14px;
 }
 
 button:hover {
