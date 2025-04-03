@@ -1,119 +1,127 @@
+
 .weathercard {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 200px;
     justify-content: center;
     align-items: center;
     border: 3px solid rgb(16, 223, 223);
-    box-shadow: 0 0 10px rgb(8, 230, 230), 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px rgb(8, 230, 230), 0 0 15px #0ff, 0 0 20px #0ff, 0 0 30px #0ff; /* Smaller shadow */
+    padding: 15px; 
+    border-radius: 8px;
 }
+
 
 .day-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px; 
     width: 100%;
     flex-direction: row;
-    
 }
+
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 4px; 
 }
 
+
 .weather-image {
-    width: 150px;
-    height: 150px;
+    width: 120px; 
+    height: 120px; 
 }
+
 
 .description-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 10px 0;
-    gap: 10px;
+    padding: 8px 0; 
+    gap: 8px; 
 }
+
 
 .items {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 15px; 
     width: 100%;
     justify-content: space-between;
 }
 
-.title {
+
+.title, .value {
     width: 50%;
     text-align: left;
     font-weight: bold;
 }
 
-.value {
-    width: 50%;
-    text-align: left;
-    font-weight: bold;
-}
 
 .date {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
     align-items: center;
     font-weight: bold;
     text-transform: uppercase;
 }
 
+
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 40px; 
     color: white;
 }
 
+
 .welcome-message {
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
 }
 
+
 .weather-in {
-    font-size: 40px;
+    font-size: 32px;
 }
+
 
 .top-half {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px; 
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
+
 label {
-    font-size: 30px;
+    font-size: 24px; 
 }
+
+
 .input-container {
     position: relative;
     display: inline-block;
 }
 
+
 input {
-    font-size: 20px;
-    height: 30px;
+    font-size: 18px; 
+    height: 28px; 
     background-color: rgb(16, 15, 15);
     color: white;
     border: none;
     border-bottom: 1px solid white;
     outline: none;
-    width: 200px;
+    width: 180px; 
 }
 
 
@@ -121,7 +129,7 @@ input:focus {
     border-bottom: 2px solid cyan;
 }
 
-/* Glowing underline */
+
 .input-container::after {
     content: "";
     position: absolute;
@@ -133,45 +141,86 @@ input:focus {
     transition: width 0.4s ease-in-out;
 }
 
-
 input:focus + .input-container::after {
     width: 100%;
 }
+
+
 form {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 8px; 
     align-items: center;
     width: 100%;
     justify-content: center;
 }
 
+
 .overline {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px; 
     border-bottom: 1px solid white;
     width: 100%;
-    padding-bottom: 21px;
+    padding-bottom: 18px;
     align-items: center;
 }
+
 
 .input-button {
     display: flex;
     flex-direction: row;
-    gap: 30px;
-    align-items: flex-end
+    gap: 25px; 
+    align-items: flex-end;
 }
 
+
 button {
-    border-radius: 10px;
+    border-radius: 8px; 
     background-color: cyan;
-    height: 25px;
-    width: 150px;
-    font-size: 17px;
+    height: 22px; 
+    width: 130px; 
+    font-size: 15px;
 }
+
 
 button:hover {
     background-color: rgb(109, 179, 179);
     cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .weathercard {
+        width: 180px; 
+    }
+
+    .weather-image {
+        width: 100px; 
+        height: 100px; 
+    }
+
+    .main-container {
+        gap: 30px; 
+    }
+
+    .top-half {
+        gap: 15px; 
+    }
+
+    .welcome-message, .weather-in {
+        font-size: 24px;
+    }
+
+    .input-container {
+        width: 100%; 
+    }
+
+    input {
+        width: 150px; 
+    }
+
+    button {
+        width: 120px; 
+    }
 }
